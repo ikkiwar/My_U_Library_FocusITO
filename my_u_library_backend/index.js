@@ -23,3 +23,14 @@ app.listen(49146, () => {
 app.get('/', (req, res) => {
     res.send('Hello World');
 });
+
+app.get('/api/role', (req, res) => {
+    database.collection('role').find({}).toArray(function (err, docs) {
+        if (err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            res.send(docs);
+        }
+    });
+});
