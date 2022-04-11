@@ -1,0 +1,38 @@
+@import "variables";
+
+.filter-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  background: $white;
+  padding-left: 10px;
+  padding-right: 10px;
+ border-radius: 7px;
+  box-shadow: $box-shadow;
+  .filter-title{
+    display: flex;
+    flex-direction: row;
+    i{
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      margin-right: 5px;
+    }
+  }
+
+  .filter-children{
+    display: flex;
+    flex-direction: row;
+    .p-input-icon-left{
+      margin-right: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+
+}
