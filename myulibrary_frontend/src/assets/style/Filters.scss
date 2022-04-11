@@ -11,6 +11,7 @@
   padding-left: 10px;
   padding-right: 10px;
  border-radius: 7px;
+  box-shadow: $box-shadow;
   .filter-title{
     display: flex;
     flex-direction: row;
@@ -25,6 +26,12 @@
   .filter-children{
     display: flex;
     flex-direction: row;
+    .p-input-icon-left{
+      margin-right: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
 

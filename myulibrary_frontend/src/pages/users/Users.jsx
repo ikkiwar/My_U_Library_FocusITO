@@ -6,28 +6,39 @@ import {useDispatch,useSelector} from "react-redux";
 import {getUsersList} from "../../redux/actions/userActions";
 import {DataTable} from 'primereact/datatable';
 import {Column} from 'primereact/column';
+import {InputText} from 'primereact/inputtext';
 
 const Users = () => {
-const dispatch = useDispatch();
+    const [filter, setFilter] = useState('');
+    const [globalFilterValue, setGlobalFilterValue] = useState('');
+    const dispatch = useDispatch();
     const {usersList} = useSelector((state) => ({
         usersList: state.user.usersList
     }));
+    console.log(filter);
 
     useEffect(() => {
-        dispatch(getUsersList());
+        getlist()
     }, []);
 
-    console.log(usersList);
+    const getlist = () =>{
+        dispatch(getUsersList());
+    }
+
 
     return (
         <div>
             <MenuBar />
            <div className="body-container">
                <Filters title="Users" icon="pi pi-users" >
-                   <NewUserDialog />
+                   <span className="p-input-icon-left">
+                    <i className="pi pi-search"/>
+                   <InputText type="search" placeholder="Search" value={filter} onChange={(e) => setFilter( e.target.value ) } />
+                   </span>
+                       <NewUserDialog getlist={getlist}/>
                </Filters>
                <div className="table-container">
-                    <DataTable value={usersList} paginator={true} rows={10}>
+                    <DataTable value={usersList} paginator rows={10} globalFilter={filter} >
                         <Column field="name" header="Name" />
                         <Column field="last_name" header="Last Name" />
                         <Column field="email" header="Email" />

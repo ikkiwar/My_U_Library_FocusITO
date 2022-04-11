@@ -4,6 +4,7 @@ import { InputText } from 'primereact/inputtext';
 import Book from "../assets/images/book.png"
 import { useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import "../assets/style/MenuBar.scss"
 
 const MenuBar = () => {
     const navigate = useNavigate();
@@ -44,7 +45,7 @@ const MenuBar = () => {
     const end = <label style={{marginRight: "10px", fontWeight:"600"}}>{user.name.toUpperCase() +" "+user["last_name"].toUpperCase()}</label>;
 
     return (
-        <div>
+        <div className="menu-bar">
             <div className="card">
                 <Menubar model={  items } start={start} end={end} />
             </div>

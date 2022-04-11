@@ -8,4 +8,30 @@ body{
   margin-top: 20px;
   margin-left: 15px;
   margin-right: 15px;
+  box-shadow: $box-shadow;
+  .p-datatable .p-datatable-tbody > tr > td{
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  .p-datatable .p-datatable-thead > tr > th{
+    text-align: center ;
+    border: 1px solid #ddd;
+  }
+
+  .p-datatable .p-column-header-content{
+    justify-content: center;
+  }
+}
+
+.text-field{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  text-align: left;
+  .p-inputtext{
+    width: 255px;
+  }
+  .p-dropdown{
+    width: 255px;
+  }
 }
