@@ -1,5 +1,11 @@
 @import "variables";
 body{
-  background: $base-color;
+  background: $base-color ;
   font-family: $font-family;
+}
+
+.table-container{
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
 }

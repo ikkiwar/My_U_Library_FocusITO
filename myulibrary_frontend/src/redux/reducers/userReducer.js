@@ -1,10 +1,11 @@
-import {LOGIN_USER_FULFILLED} from "../types";
+import {LOGIN_USER_FULFILLED, GET_USER_LIST} from "../types";
 
 const initalState = {
-  user: {},
+  user: [],
   isLoggedIn: false,
   isLoading: false,
   error: null,
+  usersList: [],
 };
 
 export default function ( state= initalState, action ) {
@@ -15,7 +16,7 @@ export default function ( state= initalState, action ) {
         isLoading: true,
       };
     case 'LOGIN_USER_FULFILLED':
-      console.log(action.payload);
+
       return {
         ...state,
         isLoading: false,
@@ -27,6 +28,12 @@ export default function ( state= initalState, action ) {
         ...state,
         isLoggedIn: false,
         user: {},
+      };
+      case 'GET_USER_LIST':
+        console.log(action.payload);
+      return {
+        ...state,
+        usersList: action.payload,
       };
     default:
       return state;

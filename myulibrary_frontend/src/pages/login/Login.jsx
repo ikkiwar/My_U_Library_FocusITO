@@ -5,6 +5,7 @@ import "../../assets/style/Login.scss";
 import {InputText} from "primereact/inputtext";
 import {Password} from "primereact/password";
 import {Button} from "primereact/button";
+import {useNavigate} from "react-router-dom";
 
 
 
@@ -12,6 +13,7 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {user} = useSelector((state) => ({
         user: state.user.user
     }));
@@ -23,7 +25,7 @@ const Login = () => {
     useEffect(() => {
 
         if (user[0]) {
-            (user[0]?.password === password) ? window.location.href = "/home" : alert("Wrong password");
+            (user[0]?.password === password) ? navigate("/home") : alert("Wrong password");
         }
     }, [user]);
 
