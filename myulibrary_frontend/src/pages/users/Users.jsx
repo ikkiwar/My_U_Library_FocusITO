@@ -10,12 +10,11 @@ import {InputText} from 'primereact/inputtext';
 
 const Users = () => {
     const [filter, setFilter] = useState('');
-    const [globalFilterValue, setGlobalFilterValue] = useState('');
     const dispatch = useDispatch();
     const {usersList} = useSelector((state) => ({
         usersList: state.user.usersList
     }));
-    console.log(filter);
+
 
     useEffect(() => {
         getlist()

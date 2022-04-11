@@ -35,3 +35,10 @@ body{
     width: 255px;
   }
 }
+
+.number-field{
+  @extend .text-field;
+  .p-inputtext{
+  width: 150px;
+}
+}
